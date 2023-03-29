@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .divborder {
+      border: 2px solid black;
+      display: flex;
+      justify-content: flex-start;
+      margin: 20px;
+      padding: 10px;
+    }
+
+    img {
+      width: 350px;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      align-items: justify;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .spantext {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .first {
+      color: brown;
+    }
+
+    .second {
+      color: blue;
+    }
+
+    .btn {
+      border: 2px solid black;
+    }
+
+    .morecommon {
+      display: none;
+    }
+
+    .active {
+      font-weight: bold;
+    }
+
+    #pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    #pagination a,
+    #pagination span {
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 0 4px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      color: #333;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #pagination a:hover {
+      background-color: #ddd;
+    }
+
+    #pagination .active {
+      background-color: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <div id="pagination">
+    <!-- pagination links will be dynamically added here -->
+  </div>
+  <script>
+    let currentPage = 1;
+    const imagesPerPage = 7;
+    let data;
+    let data2;
+
+    async function fetchData() {
+      let response = await fetch('https://dog.ceo/api/breeds/image/random/50');
+      data = await response.json();
+
+      let response2 = await fetch('https://jsonplaceholder.typicode.com/posts');
+      data2 = await response2.json();
+
+      showImages();
+    }
+
+    function showImages() {
+      let startIndex = (currentPage - 1) * imagesPerPage;
+      let endIndex = startIndex + imagesPerPage;
+
+      let k = '<div class="img">';
+
+      for (let i = startIndex, j = startIndex; i < endIndex && i < data.message.length && j < data2.length; i++, j++) {
+        k += '<div class="imgdiv"><img src=' + data.message[i] + '><div class="imgdiv">' + data2[j].title + '</div></div>';
+      }
+
+      k += '</div>';
+      document.getElementById('container').innerHTML = k;
+
+      showPagination();
+    }
+
+    function showPagination() {
+      let totalPages = Math.ceil(data.message.length / imagesPerPage);
+
+      let paginationHTML = '';
+
+      if (totalPages > 1) {
+        paginationHTML += '<a onclick="goToPage(1)">First</a>';
+
+        for (let i = 1; i <= totalPages; i++) {
+          if (i === currentPage) {
+            paginationHTML += '<span class="active">' + i + '</span>';
+          } else {
+            paginationHTML += '<a onclick="goToPage(' + i + ')">' + i + '</a>';
+          }
+        }
+
+        paginationHTML += '<a onclick="goToPage(' + totalPages + ')">Last</a>';
+      }
+
+      document.getElementById('pagination').innerHTML = paginationHTML;
+    }
+
+    function goToPage(pageNumber) {
+      currentPage = pageNumber;
+      showImages();
+    }
+
+    fetchData();
+
+  </script>
+</body>
+
+</html>

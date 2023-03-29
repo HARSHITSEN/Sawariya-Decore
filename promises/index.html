@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+</head>
+
+<body>
+    <script>
+        // First Example Of Promis
+
+        // let flag=true;
+        // let pro= new Promise(function(resolve,reject){
+        //     if(flag){
+        //         resolve("ohhhhh yes! ")
+        //     }
+        //     else{
+        //         reject("ohhhh no! ")
+        //     }0
+        // });
+        // pro.then(issfulfilled).catch(isreject);
+        // function issfulfilled(event){
+        //     console.log(event)
+        // }
+        // function isreject(event){
+        //     console.log(event)
+        // }
+
+
+        // secound program
+
+        // function getpromis(url){
+        //     let pro = new Promise(function(resolve,reject)
+        // {
+        //         console.log("server data fetching ,plz wait.... ")
+        //         let xhr = new XMLHttpRequest();
+        //         xhr.open("GET",url,true)
+        //         xhr.send()
+        //         xhr.onload=()=>{
+        //             if(xhr.status==200){
+        //                 resolve(xhr.response)
+        //             }
+        //             else{
+        //                 reject("this is not found in our server....")
+        //             }
+        //         }
+
+        //     });
+        //     return pro;
+        // }
+        // const url="https://jsonplaceholder.typicode.com/posts"
+        // let pro=getpromis(url)
+        // pro.then((v)=>{console.log(v)}).catch((r)=>{console.log(r)})
+
+        // third program
+
+
+        function getUser(userId) {
+            return new Promise((resolve, reject) => {
+                console.log('Get the user from the database.');
+                setTimeout(() => {
+                    resolve({
+                        userId: userId,
+                        username: 'admin'
+                    });
+                }, 1000);
+            })
+        }
+
+        function getServices(user) {
+            return new Promise((resolve, reject) => {
+                console.log(`Get the services of ${user.username} from the API.`);
+                setTimeout(() => {
+                    resolve(['Email', 'VPN', 'CDN']);
+                }, 3 * 1000);
+            });
+        }
+
+        function getServiceCost(services) {
+            return new Promise((resolve, reject) => {
+                console.log(`Calculate the service cost of ${services}.`);
+                setTimeout(() => {
+                    resolve(services.length * 100);
+                }, 2 * 1000);
+            });
+        }
+        getUser(100)
+        .then(getServices)
+        .then(getServiceCost)
+        .then(console.log);
+
+    </script>
+</body>
+
+</html>
