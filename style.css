@@ -30,7 +30,7 @@
 }
 .para{
       /* background-image: linear-gradient(to bottom, rgba(7, 13, 21, 0), rgba(7, 13, 21, 0)), url("images/aboutus.jpg"); */
-      background-image: linear-gradient(to bottom, rgb(69 81 98 / 88%), rgba(7, 13, 21, 0)), url(images/aboutus.jpg);
+      background-image: linear-gradient(to bottom, rgb(69 81 98 / 88%), rgba(7, 13, 21, 0)), url("images/aboutus.jpg");
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
