@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +11,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
   <title>sawariyaDecore.com</title>
 </head>
 
@@ -84,21 +84,21 @@
       </div>
 
       <!-- The slideshow/carousel -->
-      <div class="carousel-inner" align="center">
+      <div class="container-fluid carousel-inner" align="center">
         <div class="carousel-item active">
-          <img src="images/0.jpg" alt="Los Angeles" class="d-block" style="width:63%">
+          <img src="images/0.jpg" alt="Los Angeles" class="d-block" style="width:100%;">
         </div>
         <div class="carousel-item">
-          <img src="images/3.jpeg" alt="Chicago" class="d-block" style="width:63% ">
+          <img src="images/3.jpeg" alt="Chicago" class="d-block" style="width:100% ">
         </div>
         <div class="carousel-item">
-          <img src="images/5.jpeg" alt="New York" class="d-block" style="width:63%">
+          <img src="images/5.jpeg" alt="New York" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-          <img src="images/7.jpeg" alt="New York" class="d-block" style="width:63%">
+          <img src="images/7.jpeg" alt="New York" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-          <img src="images/bg.jpeg" alt="New York" class="d-block" style="width:63%">
+          <img src="images/bg.jpeg" alt="New York" class="d-block" style="width:100%">
         </div>
       </div>
 
@@ -112,15 +112,11 @@
     </div>
 
     <!-- about us start here -->
-    <div class="container center">About us</div>
-    <div class="container picpara" id="aboutus">
-      <div class="pic">
-        <img src="images/wedding.jpg" class="img1pic" alt="this page is not found">
-      </div>
-      <div class="para">
-        <p class="con">“Sawariya Tent House is committed to excellence and offers you the First-class decoration,
+    <div class="container center" id="aboutus">About us</div>
+      <div class="container-fluid para">
+        <p class="container con"><span class="para1"> “Sawariya Tent House is committed to excellence and offers you the First-class decoration,
           Tents, and Catering Management Services for your wedding ceremony, religious, parties, events, live
-          Concerts, and fashion shows, etc." <br> &nbsp; <br> We are one of the leading Canvas and Catering
+          Concerts, and fashion shows, etc.“</span><br> &nbsp; <br><span class="para2">We are one of the leading Canvas and Catering
           Services providers in Barwani and we offer event management services comprising a wide range of well
           designed and customizable packages as per the requirements of large institutions, clubs, corporate
           houses, hotels, and private party, etc. The services offered by us are wholesome, well delivered,
@@ -129,10 +125,9 @@
           quality work. We regularly update the variety of pandals as per the requirement of our clients so that
           we can fulfill requirement of our each customer and provide them with the best pandal. A-One Tent House
           has designed the events with distinction & dedication. Light up your life, make your day colorful &
-          remember this day, as the brightest day of your life.</p>
+          remember this day, as the brightest day of your life.</span></p>
         </p>
       </div>
-    </div>
 
 
     <!--decoration start here  -->
@@ -372,26 +367,7 @@
       SawariyaDecore inc .All Rights Reserved</div>
   </div>
   <script>
-    let sbtn = document.querySelector(".submitbtn")
-    let form = document.querySelector("#form")
-    sbtn.addEventListener('click', event => {
-        event.preventDefault()
-        let formdata=new FormData(form)
-        let value=[...formdata.values()]
-        let xhr = new XMLHttpRequest()
-        xhr.open("POST", "contact.php", true)
-        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
-        xhr.onload = function () {
-            if (xhr.status == 200) {
-                console.log(xhr.response)
-            }
-            else {
-                console.log("something is going wrong")
-            }
-        }
-        xhr.send('name=' +value[0] + '&email=' +value[1] + '&contact=' + value[2]+ '&message=' + value[3])
-        form.reset()
-    })
+   
 </script>
 </body>
 

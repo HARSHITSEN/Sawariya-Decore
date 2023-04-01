@@ -13,4 +13,6 @@ if($result){
 else{
     echo "Data not inserted";
 }
+// header("Location:index.html");
+//     exit();
 ?>
