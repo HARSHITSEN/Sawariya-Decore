@@ -5,7 +5,7 @@ $email=$_POST['email'];
 $mobile=$_POST['phone'];
 $enquiry=$_POST['enquiry'];
 $query = "insert into enquiry values(DEFAULT,'$name','$email','$mobile','$enquiry');";
-echo $query;
+// echo $query;
 $result = mysqli_query($conn,$query);
 if($result){
     echo "Data Successfully Inserted";
