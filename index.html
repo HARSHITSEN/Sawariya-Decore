@@ -1,4 +1,4 @@
-THROSOMB<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,17 +7,20 @@ THROSOMB<!DOCTYPE html>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
   <script src="index.js"></script>
   <title>sawariyaDecore.com</title>
+  <style>
+    #more {display: none;}
+  </style>
 </head>
 
 <body>
   <div class="container-fluid">
     <nav class="navbar navbar-expand-sm bg-light navbar-light ">
-      <div class="container-fluid"> <a class="navbar-brand" href="index.html"><img
-            src="images/output-onlinepngtools (1).png" alt="THIS PAGE IS NOT FOUND" class="imglogo"></a>
+      <div class="container-fluid"> <a class="navbar-brand" href="index.html"><img src="images/output-onlinepngtools (1).png" alt="THIS PAGE IS NOT FOUND" class="imglogo"></a>
         <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -112,9 +115,10 @@ THROSOMB<!DOCTYPE html>
     <!-- about us start here -->
     <div class="container center" id="aboutus">About us</div>
       <div class="container-fluid para">
+        <span>
         <p class="container con"><span class="para1"> “Sawariya Tent House is committed to excellence and offers you the First-class decoration,
           Tents, and Catering Management Services for your wedding ceremony, religious, parties, events, live
-          Concerts, and fashion shows, etc.“</span><br> &nbsp; <br><span class="para2">We are one of the leading Canvas and Catering
+          Concerts, and fashion shows, etc.“<span id="dots">...</span></span><br> &nbsp; <br><span class="para2" id="more" >We are one of the leading Canvas and Catering
           Services providers in Barwani and we offer event management services comprising a wide range of well
           designed and customizable packages as per the requirements of large institutions, clubs, corporate
           houses, hotels, and private party, etc. The services offered by us are wholesome, well delivered,
@@ -125,20 +129,22 @@ THROSOMB<!DOCTYPE html>
           has designed the events with distinction & dedication. Light up your life, make your day colorful &
           remember this day, as the brightest day of your life.</span></p>
         </p>
+        <button onclick="Readmore()" id="myBtn" style="background: none; border: none; font-size: 23px; font-family: emoji;">Read more</button>
+        </span>
       </div>
 
 
     <!--decoration start here  -->
     <div class="container center" id="decoration">Decoration</div>
     <div class="row decoration">
-      <div class="decore col-lg-3  col-md-6 col-sm-12">
+      <div class="decore col-lg-3  col-md-6 col-sm-12" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
         <img src="images/light.jpg" alt="" width="200px">
         <h5 style="padding-top: 10px;">Light Decoration</h5>
         <p>Hire the best light systems from us to make your event extravaganza. For Diwali, Navratri, and other special occasions.</p>
         <button class="btn bg-danger" data-bs-toggle="modal" data-bs-target="#myModal" style="color: #fff; width:200px;">Enquiry
           Now</button>
       </div>
-      <div class="decore col-lg-3  col-md-6 col-sm-12">
+      <div class="decore col-lg-3  col-md-6 col-sm-12" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
         <img src="images/birthday.jpg" alt="" width="200px">
         <h5 style="padding-top: 10px;">Birthday Decoration</h5>
         <p>Make the birthday of your special one unique and splendid. no matter what his/her age be,we have the best for
@@ -146,14 +152,14 @@ THROSOMB<!DOCTYPE html>
         <button class="btn bg-danger" data-bs-toggle="modal" data-bs-target="#myModal" style="color: #fff; width:200px;">Enquiry
           Now</button>
       </div>
-      <div class="decore  col-lg-3  col-md-6 col-sm-12">
+      <div class="decore  col-lg-3  col-md-6 col-sm-12" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
         <img src="images/sadi.jpg" alt="" width="200px">
         <h5 style="padding-top: 10px;">Wedding Decoration</h5>
         <p>Our systems are best fitted for the entire wedding ,reception ,sangeet, engagement, mehendi and others.</p>
         <button class="btn bg-danger" data-bs-toggle="modal" data-bs-target="#myModal" style="color: #fff; width:200px;">Enquiry
           Now</button>
       </div>
-      <div class="decore col-lg-3  col-md-6 col-sm-12">
+      <div class="decore col-lg-3  col-md-6 col-sm-12" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" >
         <img src="images/theme.jpg" alt="" width="200px">
         <h5 style="padding-top: 10px;"> Theme Decoration</h5>
         <p>We incorporate the chosen theme into all aspects of the party, including the invitation, decor, food, and
@@ -243,7 +249,7 @@ THROSOMB<!DOCTYPE html>
     <!-- review start here/testimonial -->
     <div class="Testimonial" id="Testimonial">
       <div class="container center"
-        style="margin-top:-10px; margin-bottom: 100px;color: black; background-color: rgba(183, 58, 165, 0.497);">
+        style="margin-top:-10px; margin-bottom: 100px;color:lightgray; background-color: rgba(183, 58, 165, 0.497);">
         Testimonial's</div>
       <div id="demo" class="carousel slide" data-bs-ride="carousel">
         <!-- Indicators/dots -->
@@ -361,8 +367,26 @@ THROSOMB<!DOCTYPE html>
     </div>
     <div class="container-fluid foot" style="text-align: center;">copyright 2023-2024 SawariyaDecore inc .All Rights Reserved</div>
   </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-   
+    AOS.init();
+  </script>
+  <script>
+    function Readmore() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }
 </script>
 </body>
 
